@@ -34,18 +34,18 @@ public class ContentProviderActivity extends AppCompatActivity {
         values.put(ContactDatabase.ID, new Random().nextInt(100));
         values.put(ContactDatabase.NAME, mName.getText().toString());
         values.put(ContactDatabase.PHONE, mPhone.getText().toString());
-        getApplicationContext().getContentResolver().insert(ContentProvider.CONTENT_URI, values);
+        getApplicationContext().getContentResolver().insert(MyContentProvider.CONTENT_URI, values);
         Toast.makeText(this, "Insert 1 row", Toast.LENGTH_SHORT).show();
         onShow(view);
     }
 
     public void onReset(View view) {
-        int delcount = getContentResolver().delete(ContentProvider.CONTENT_URI, null, null);
+        int delcount = getContentResolver().delete(MyContentProvider.CONTENT_URI, null, null);
         Toast.makeText(this, "Delete " + delcount + "rows", Toast.LENGTH_SHORT).show();
         onShow(view);
     }
     public void onShow(View view) {
-        Uri uri = ContentProvider.CONTENT_URI;
+        Uri uri = MyContentProvider.CONTENT_URI;
         Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
         StringBuilder sb = new StringBuilder();
         while (cursor.moveToNext()){
