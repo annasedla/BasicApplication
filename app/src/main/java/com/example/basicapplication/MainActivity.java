@@ -14,8 +14,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Go to broadcast
-    public void goToBroadcast (View view){
-        Intent intent = new Intent (this, BroadcastActivity.class);
+    public void goToBroadcast (View view) {
+        Intent intent = new Intent(this, BroadcastActivity.class);
+        startActivity(intent);
+    }
+
+    // Go to service
+    public void goToService (View view){
+        Intent intent = new Intent (this, ServiceActivity.class);
+        startActivity(intent);
+    }
+
+    // Go to content provider
+    public void goToContentProvider (View view) {
+        Intent intent = new Intent(this, ContentProviderActivity.class);
         startActivity(intent);
     }
 }
