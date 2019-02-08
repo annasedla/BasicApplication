@@ -21,8 +21,6 @@ public class ServiceActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             tx = findViewById(R.id.textView1);
-            System.out.println("RECEIVED");
-            //tx.setText("poop");
             tx.setText(intent.getStringExtra("currentTime"));
         }
     };
@@ -51,5 +49,12 @@ public class ServiceActivity extends AppCompatActivity {
     // Method to stop the service
     public void stopService(View view) {
         MyService.keepRunning = false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        // Unregister since the activity is about to be closed.
+        unregisterReceiver(br);
+        super.onDestroy();
     }
 }

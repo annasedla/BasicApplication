@@ -19,9 +19,6 @@ public class MyService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
 
-        System.out.println("HEREHERE");
-        System.out.println("Keeprunning:" + keepRunning);
-
         while (keepRunning){
 
             //get current time
@@ -39,10 +36,6 @@ public class MyService extends IntentService {
             intent2.addCategory(Intent.CATEGORY_DEFAULT);
             intent2.putExtra("currentTime", formattedDate);
             sendBroadcast(intent2);
-
-            //Intent intent2 = new Intent(ServiceActivity.BROADCAST_ACTION);
-            //intent2.putExtra("org.example.time", formattedDate);
-            //LocalBroadcastManager.getInstance(this).sendBroadcast(intent2);
         }
     }
 }
