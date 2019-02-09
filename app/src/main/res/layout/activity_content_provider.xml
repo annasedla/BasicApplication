@@ -18,8 +18,25 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Robin"
+            android:text="Anna"
             android:id="@+id/text_name"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID:"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/IDNumber"/>
 
     </LinearLayout>
     <LinearLayout
@@ -35,10 +52,11 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2224447896"
+            android:text="111222333"
             android:id="@+id/text_phone"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +72,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reset"
+            android:text="Clear"
             android:onClick="onReset"
             />
         <Button
@@ -66,10 +84,8 @@
 
     </LinearLayout>
 
-    <TextView
+    <ListView
+        android:id="@+id/dbview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DB Content"
-        android:inputType="textMultiLine"
-        android:id="@+id/dbview"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

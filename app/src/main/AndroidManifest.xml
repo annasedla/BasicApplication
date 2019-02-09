@@ -9,26 +9,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver
+            android:name="MyReceiver2"
+            android:enabled="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="com.example.demo"></action>
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".ContentProviderActivity" />
         <activity android:name=".ServiceActivity" />
         <activity android:name=".BroadcastActivity" />
 
-        <receiver android:name="MyReceiver">
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.example.HOMEWORK">
-                </action>
+                <action android:name="com.unitedcoders.android.broadcasttest2.SHOWTOAST"></action>
             </intent-filter>
-
         </receiver>
 
         <service android:name=".MyService" />
 
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.example.contact"
+            android:exported="true"></provider>
     </application>
+
 </manifest>

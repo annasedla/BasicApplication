@@ -7,19 +7,19 @@ import android.util.Log;
 
 public class ContactDatabase extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "contact_data";
+    public static final String DB_NAME = "contacts_data";
 
     //Constants for table and columns
     public static final String TABLE = "contact";
-    public static final String ID = "_id";
+    public static final String IDNUMBER = "idnumber";
     public static final String NAME = "name";
     public static final String PHONE = "phone";
 
     private static final String CREATE_TABLE_TUTORIALS = "create table " + TABLE + " (" +
-            ID + " integer primary key autoincrement, " + NAME+ " text, " + PHONE + " text );";
+            NAME + " text, " + PHONE+ " text, " + IDNUMBER + " text );";
 
     private static final String DB_SCHEMA = CREATE_TABLE_TUTORIALS;
-    public static final String[] ALL_COLUMNS ={ID, NAME, PHONE};
+    public static final String[] ALL_COLUMNS ={NAME, PHONE, IDNUMBER};
 
     @Override
     public void onCreate(SQLiteDatabase db) {

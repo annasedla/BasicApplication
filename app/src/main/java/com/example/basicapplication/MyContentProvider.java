@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class MyContentProvider extends ContentProvider  {
 
-    private static final String AUTHORITY = "com.example.coursedemo";
+    private static final String AUTHORITY = "com.example.contact";
     private static final String BASE_PATH = "student";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
     private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
@@ -109,5 +109,4 @@ public class MyContentProvider extends ContentProvider  {
         getContext().getContentResolver().notifyChange(uri, null);
         return updCount;
     }
-
 }

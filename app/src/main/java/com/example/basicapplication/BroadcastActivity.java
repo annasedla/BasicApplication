@@ -2,6 +2,7 @@ package com.example.basicapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,9 +18,10 @@ public class BroadcastActivity extends Activity {
 
     // Send an intended message
     public void broadcastIntent(View view) {
-        Intent intent = new Intent();
-        intent.setAction("com.example.HOMEWORK");
+//        Intent intent = new Intent("com.unitedcoders.android.broadcasttest2.SHOWTOAST");
+        Intent intent = new Intent("com.example.demo");
         intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.putExtra("msg", "Broadcast event!");
         sendBroadcast(intent);
         System.out.println("Send");
     }
